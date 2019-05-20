@@ -6,13 +6,13 @@ using System.Xml.Linq;
 namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
 {
     public class MyUriJsonSource : UriJsonSource {
-        public string UserName { get; set; }
+        public string Username { get; set; }
 
         [PasswordPropertyText(true)]
         public string Password { get; set; }
         public override string GetJsonString() {
             using(var client = new WebClient()) {
-                client.Credentials = new NetworkCredential(UserName, Password);
+                client.Credentials = new NetworkCredential(Username, Password);
                 // add a header to the request
                 // client.Headers.Add(UserName, Password);
                 return client.DownloadString(Uri);
@@ -20,14 +20,14 @@ namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
         }
         protected override void SaveToXml(XElement connection) {
             base.SaveToXml(connection);
-            MySecretStorage.SecretStorage.Instance.SaveCredentials(Uri.Authority, new Tuple<string, string>(UserName, Password));
+            MySecretStorage.SecretStorage.Instance.SaveCredentials(Uri.Authority, new Tuple<string, string>(Username, Password));
         }
 
         protected override void LoadFromXml(XElement connection) {
             base.LoadFromXml(connection);
             var cred = MySecretStorage.SecretStorage.Instance.GetCredentials(Uri.Authority);
             if(cred != null) {
-                UserName = cred.Item1;
+                Username = cred.Item1;
                 Password = cred.Item2;
             }
         }
@@ -35,7 +35,7 @@ namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
             var clone = new MyUriJsonSource() {
                 Uri = Uri,
                 RootElement = RootElement,
-                UserName = UserName,
+                Username = Username,
                 Password = Password
             };
             return clone;

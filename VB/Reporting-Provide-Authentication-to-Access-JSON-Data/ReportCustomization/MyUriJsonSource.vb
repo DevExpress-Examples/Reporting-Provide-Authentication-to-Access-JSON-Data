@@ -7,13 +7,13 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
     Public Class MyUriJsonSource
         Inherits UriJsonSource
 
-        Public Property UserName() As String
+        Public Property Username() As String
 
         <PasswordPropertyText(True)> _
         Public Property Password() As String
         Public Overrides Function GetJsonString() As String
             Using client = New WebClient()
-                client.Credentials = New NetworkCredential(UserName, Password)
+                client.Credentials = New NetworkCredential(Username, Password)
                 ' add a header to the request
                 ' client.Headers.Add(UserName, Password);
                 Return client.DownloadString(Uri)
@@ -21,14 +21,14 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
         End Function
         Protected Overrides Sub SaveToXml(ByVal connection As XElement)
             MyBase.SaveToXml(connection)
-            MySecretStorage.SecretStorage.Instance.SaveCredentials(Uri.Authority, New Tuple(Of String, String)(UserName, Password))
+            MySecretStorage.SecretStorage.Instance.SaveCredentials(Uri.Authority, New Tuple(Of String, String)(Username, Password))
         End Sub
 
         Protected Overrides Sub LoadFromXml(ByVal connection As XElement)
             MyBase.LoadFromXml(connection)
             Dim cred = MySecretStorage.SecretStorage.Instance.GetCredentials(Uri.Authority)
             If cred IsNot Nothing Then
-                UserName = cred.Item1
+                Username = cred.Item1
                 Password = cred.Item2
             End If
         End Sub
@@ -37,7 +37,7 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
             Dim clone_Renamed = New MyUriJsonSource() With { _
                 .Uri = Uri, _
                 .RootElement = RootElement, _
-                .UserName = UserName, _
+                .Username = Username, _
                 .Password = Password _
             }
             Return clone_Renamed

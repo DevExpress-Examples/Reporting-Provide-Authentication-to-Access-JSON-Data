@@ -33,7 +33,7 @@ namespace XtraReport_JsonDataSource_with_Authorization
                 Name = "jsonDataSource",
                 JsonSource = new MyUriJsonSource() {
                     Uri = new Uri(uri),
-                    UserName = userName,
+                    Username = userName,
                     Password = password
                 }
             };

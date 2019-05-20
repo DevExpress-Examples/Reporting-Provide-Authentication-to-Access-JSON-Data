@@ -123,7 +123,7 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
                 Dim myJsonSource = TryCast(Model.JsonSource, MyUriJsonSource)
                 If myJsonSource IsNot Nothing AndAlso TypeOf View Is IMyChooseJsonSourcePageView Then
                     TryCast(View, IMyChooseJsonSourcePageView).Password = myJsonSource.Password
-                    TryCast(View, IMyChooseJsonSourcePageView).UserName = myJsonSource.UserName
+                    TryCast(View, IMyChooseJsonSourcePageView).UserName = myJsonSource.Username
                 End If
             End If
         End Sub
@@ -138,7 +138,7 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
                         source = New JsonDataSource With { _
                             .JsonSource = New MyUriJsonSource() With { _
                                 .Uri = New Uri(View.Uri), _
-                                .UserName = (TryCast(View, IMyChooseJsonSourcePageView))?.UserName, _
+                                .Username = (TryCast(View, IMyChooseJsonSourcePageView))?.UserName, _
                                 .Password = (TryCast(View, IMyChooseJsonSourcePageView))?.Password _
                             } _
                         }
@@ -158,7 +158,7 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
         Public Overrides Sub Commit()
             Model.JsonSource = New MyUriJsonSource() With { _
                 .Uri = New Uri(View.Uri), _
-                .UserName = (TryCast(View, IMyChooseJsonSourcePageView))?.UserName, _
+                .Username = (TryCast(View, IMyChooseJsonSourcePageView))?.UserName, _
                 .Password = (TryCast(View, IMyChooseJsonSourcePageView))?.Password _
             }
             RemoveHandler View.Changed, AddressOf ViewOnChanged

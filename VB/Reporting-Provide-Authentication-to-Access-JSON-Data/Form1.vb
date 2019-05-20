@@ -37,7 +37,7 @@ Namespace XtraReport_JsonDataSource_with_Authorization
                 .Name = "jsonDataSource", _
                 .JsonSource = New MyUriJsonSource() With { _
                     .Uri = New Uri(uri), _
-                    .UserName = userName, _
+                    .Username = userName, _
                     .Password = password _
                 } _
             }

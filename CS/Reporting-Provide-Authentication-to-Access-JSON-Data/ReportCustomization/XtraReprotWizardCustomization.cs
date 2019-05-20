@@ -79,7 +79,7 @@ namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
                 var myJsonSource = Model.JsonSource as MyUriJsonSource;
                 if(myJsonSource != null && View is IMyChooseJsonSourcePageView) {
                     (View as IMyChooseJsonSourcePageView).Password = myJsonSource.Password;
-                    (View as IMyChooseJsonSourcePageView).UserName = myJsonSource.UserName;
+                    (View as IMyChooseJsonSourcePageView).UserName = myJsonSource.Username;
                 }
             }
         }
@@ -94,7 +94,7 @@ namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
                         source = new JsonDataSource {
                             JsonSource = new MyUriJsonSource() {
                                 Uri = new Uri(View.Uri),
-                                UserName = (View as IMyChooseJsonSourcePageView)?.UserName,
+                                Username = (View as IMyChooseJsonSourcePageView)?.UserName,
                                 Password = (View as IMyChooseJsonSourcePageView)?.Password
                             }
                         };
@@ -114,7 +114,7 @@ namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
         public override void Commit() {
             Model.JsonSource = new MyUriJsonSource() {
                 Uri = new Uri(View.Uri),
-                UserName = (View as IMyChooseJsonSourcePageView)?.UserName,
+                Username = (View as IMyChooseJsonSourcePageView)?.UserName,
                 Password = (View as IMyChooseJsonSourcePageView)?.Password
             };
             View.Changed -= ViewOnChanged;
