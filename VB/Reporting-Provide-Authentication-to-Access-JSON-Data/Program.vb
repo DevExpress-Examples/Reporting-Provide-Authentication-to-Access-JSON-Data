@@ -5,21 +5,17 @@ Imports System.Threading.Tasks
 Imports System.Windows.Forms
 
 Namespace XtraReport_JsonDataSource_with_Authorization
-    Friend NotInheritable Class Program
+	Friend Module Program
+		''' <summary>
+		''' The main entry point for the application.
+		''' </summary>
+		<STAThread>
+		Sub Main()
+			Application.EnableVisualStyles()
 
-        Private Sub New()
-        End Sub
-
-        ''' <summary>
-        ''' The main entry point for the application.
-        ''' </summary>
-        <STAThread> _
-        Shared Sub Main()
-            Application.EnableVisualStyles()
-
-            Application.SetCompatibleTextRenderingDefault(False)
-            Application.Run(New Form1())
-        End Sub
-    End Class
+			Application.SetCompatibleTextRenderingDefault(False)
+			Application.Run(New Form1())
+		End Sub
+	End Module
 End Namespace
 
