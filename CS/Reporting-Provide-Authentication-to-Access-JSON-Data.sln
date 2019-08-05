@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28010.2046
+VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reporting-Provide-Authentication-to-Access-JSON-Data", "Reporting-Provide-Authentication-to-Access-JSON-Data\Reporting-Provide-Authentication-to-Access-JSON-Data.csproj", "{282B02CA-8CDD-45DA-B6F5-672FA227DAFD}"
 EndProject
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5B7F6A07-339B-4313-8ED3-34284CF4A842}
+		SolutionGuid = {ABBE6880-1CCB-4DB4-80E7-42CA178AA32B}
 	EndGlobalSection
 EndGlobal
