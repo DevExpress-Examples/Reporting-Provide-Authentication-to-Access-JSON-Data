@@ -37,8 +37,6 @@
             Me.button1.TabIndex = 0
             Me.button1.Text = "Design-Time JSON Authentication"
             Me.button1.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.button1.Click += new System.EventHandler(this.DesignTimeAuthenticationButton_Click);
             ' 
             ' button2
             ' 
@@ -48,8 +46,6 @@
             Me.button2.TabIndex = 1
             Me.button2.Text = "Runtime JSON Authentication"
             Me.button2.UseVisualStyleBackColor = True
-'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
-'ORIGINAL LINE: this.button2.Click += new System.EventHandler(this.RuntimeAuthenticationButton_Click);
             ' 
             ' label1
             ' 

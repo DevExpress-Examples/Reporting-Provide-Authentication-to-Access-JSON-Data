@@ -135,12 +135,12 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
                 Dim source As JsonDataSource = Nothing
                 Try
                     Return AsyncHelper.DoWithWaitForm(Sub(token)
-                        source = New JsonDataSource With {
-                            .JsonSource = New MyUriJsonSource() With {
-                                .Uri = New Uri(View.Uri),
-                                .Username = (TryCast(View, IMyChooseJsonSourcePageView))?.UserName,
-                                .Password = (TryCast(View, IMyChooseJsonSourcePageView))?.Password
-                            }
+                        source = New JsonDataSource With { _
+                            .JsonSource = New MyUriJsonSource() With { _
+                                .Uri = New Uri(View.Uri), _
+                                .Username = (TryCast(View, IMyChooseJsonSourcePageView))?.UserName, _
+                                .Password = (TryCast(View, IMyChooseJsonSourcePageView))?.Password _
+                            } _
                         }
                         token.ThrowIfCancellationRequested()
                         source.Fill()
@@ -156,10 +156,10 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
             End If
         End Function
         Public Overrides Sub Commit()
-            Model.JsonSource = New MyUriJsonSource() With {
-                .Uri = New Uri(View.Uri),
-                .Username = (TryCast(View, IMyChooseJsonSourcePageView))?.UserName,
-                .Password = (TryCast(View, IMyChooseJsonSourcePageView))?.Password
+            Model.JsonSource = New MyUriJsonSource() With { _
+                .Uri = New Uri(View.Uri), _
+                .Username = (TryCast(View, IMyChooseJsonSourcePageView))?.UserName, _
+                .Password = (TryCast(View, IMyChooseJsonSourcePageView))?.Password _
             }
             RemoveHandler View.Changed, AddressOf ViewOnChanged
         End Sub

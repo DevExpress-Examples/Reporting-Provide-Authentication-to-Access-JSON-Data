@@ -1,7 +1,7 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28010.2016
+VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Reporting-Provide-Authentication-to-Access-JSON-Data", "Reporting-Provide-Authentication-to-Access-JSON-Data\Reporting-Provide-Authentication-to-Access-JSON-Data.vbproj", "{282B02CA-8CDD-45DA-B6F5-672FA227DAFD}"
 EndProject
@@ -15,11 +15,11 @@ Global
 		{282B02CA-8CDD-45DA-B6F5-672FA227DAFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{282B02CA-8CDD-45DA-B6F5-672FA227DAFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{282B02CA-8CDD-45DA-B6F5-672FA227DAFD}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
+		EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {150892A6-D56B-439B-B874-D8D91F3A1C7A}
+		SolutionGuid = {B2C4375B-D6E7-4EAA-9C27-5EE5333A0C3E}
 	EndGlobalSection
 EndGlobal

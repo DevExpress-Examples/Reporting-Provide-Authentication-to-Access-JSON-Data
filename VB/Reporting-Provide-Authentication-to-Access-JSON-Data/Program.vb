@@ -13,7 +13,7 @@ Namespace XtraReport_JsonDataSource_with_Authorization
         ''' <summary>
         ''' The main entry point for the application.
         ''' </summary>
-        <STAThread>
+        <STAThread> _
         Shared Sub Main()
             Application.EnableVisualStyles()
 

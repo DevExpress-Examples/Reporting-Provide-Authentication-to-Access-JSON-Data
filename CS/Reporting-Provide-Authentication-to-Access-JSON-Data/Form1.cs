@@ -21,7 +21,7 @@ namespace XtraReport_JsonDataSource_with_Authorization
         private void RuntimeAuthenticationButton_Click(object sender, EventArgs e) {
             var report = new MyReportHelper().CreateReport();
             report.DataSource = JsonDataSourceAuthorization_Example.CreateCustomJsonDataSource(
-                @"http://northwind.servicestack.net/customers.json", "userName1", "userPassword1");
+                @"https://raw.githubusercontent.com/DevExpress-Examples/DataSources/master/JSON/customers.json", "userName1", "userPassword1");
             report.DataMember = "Customers";
             new DevExpress.XtraReports.UI.ReportDesignTool(report).ShowDesigner();
         }

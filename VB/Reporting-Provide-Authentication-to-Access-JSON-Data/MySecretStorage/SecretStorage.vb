@@ -13,9 +13,9 @@ Namespace XtraReport_JsonDataSource_with_Authorization.MySecretStorage
         Private Const stringSeparator As String = "@"
 
         Private Shared lockObj As New Object()
-'INSTANT VB NOTE: The field instance was renamed since Visual Basic does not allow fields to have the same name as other class members:
+
         Private Shared instance_Renamed As SecretStorage
-'INSTANT VB NOTE: The field storage was renamed since Visual Basic does not allow fields to have the same name as other class members:
+
         Private storage_Renamed As Dictionary(Of String, Tuple(Of String, String))
         Private ReadOnly Property Storage() As Dictionary(Of String, Tuple(Of String, String))
             Get

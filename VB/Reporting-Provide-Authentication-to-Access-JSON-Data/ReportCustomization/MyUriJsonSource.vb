@@ -9,7 +9,7 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
 
         Public Property Username() As String
 
-        <PasswordPropertyText(True)>
+        <PasswordPropertyText(True)> _
         Public Property Password() As String
         Public Overrides Function GetJsonString() As String
             Using client = New WebClient()
@@ -33,12 +33,12 @@ Namespace XtraReport_JsonDataSource_with_Authorization.ReportCustomization
             End If
         End Sub
         Protected Overrides Function Clone() As JsonSourceBase
-'INSTANT VB NOTE: The local variable clone was renamed since Visual Basic will not allow local variables with the same name as their enclosing function or property:
-            Dim clone_Renamed = New MyUriJsonSource() With {
-                .Uri = Uri,
-                .RootElement = RootElement,
-                .Username = Username,
-                .Password = Password
+
+            Dim clone_Renamed = New MyUriJsonSource() With { _
+                .Uri = Uri, _
+                .RootElement = RootElement, _
+                .Username = Username, _
+                .Password = Password _
             }
             Return clone_Renamed
         End Function

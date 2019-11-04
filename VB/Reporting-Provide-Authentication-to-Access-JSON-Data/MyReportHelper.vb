@@ -55,9 +55,9 @@ Namespace XtraReport_JsonDataSource_with_Authorization
         End Sub
 
         Private Function GetGroupHeader(ByVal groupFieldName As String, ByVal pageWidth As Single, ByVal indent As Single, ByVal level As Integer) As GroupHeaderBand
-            Dim groupBand As New GroupHeaderBand() With {
-                .HeightF = 35,
-                .Level = level
+            Dim groupBand As New GroupHeaderBand() With { _
+                .HeightF = 35, _
+                .Level = level _
             }
             groupBand.GroupFields.Add(New GroupField(groupFieldName))
             groupBand.Controls.Add(GetGroupHeaderLabel(groupFieldName, indent, pageWidth))
@@ -65,10 +65,10 @@ Namespace XtraReport_JsonDataSource_with_Authorization
         End Function
 
         Private Function GetGroupHeaderLabel(ByVal groupFieldName As String, ByVal indent As Single, ByVal pageWidth As Single) As XRControl
-            Dim groupLabel As New XRLabel() With {
-                .SizeF = New SizeF(pageWidth - indent, 25),
-                .LocationF = New PointF(indent, 10),
-                .Font = New Font("Arial", 12, FontStyle.Bold)
+            Dim groupLabel As New XRLabel() With { _
+                .SizeF = New SizeF(pageWidth - indent, 25), _
+                .LocationF = New PointF(indent, 10), _
+                .Font = New Font("Arial", 12, FontStyle.Bold) _
             }
             groupLabel.ExpressionBindings.Add(New ExpressionBinding("BeforePrint", "Text", String.Format("[{0}]", groupFieldName)))
             Return groupLabel
